@@ -21,11 +21,16 @@
         h1 {
             text-align: center;
         }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> b190b2e605ee0146e0fea269c401568a5759983b
         p {
             width: 800px;
             margin: 20px auto;
         }
+<<<<<<< HEAD
 
         #vis, .filter-container, #lineChart, #winnersChart {
             max-width: 800px;
@@ -36,18 +41,38 @@
         #websiteLogo {
             margin: 10px;
             width: 100px;
+=======
+    
+        #vis, .filter-container {
+            max-width: 800px;  /* adjust this value based on your desired width */
+            margin: 0 auto;    /* This centers the block on the page */
+            display: block;    /* Ensure they're treated as block elements */
+            text-align: center; /* This centers the inner elements of the filter-container */
+        }
+        #websiteLogo {
+            margin: 10px;  /* Adjust as needed */
+             width: 100px; /* Adjust based on your logo's size */
+    /* You can set other properties as needed, such as height, etc. */
+>>>>>>> b190b2e605ee0146e0fea269c401568a5759983b
         }
         label, #yearDisplay {
             color: white;
         }
     </style>
+<<<<<<< HEAD
 </head>
 
 
+=======
+    
+</head>
+
+>>>>>>> b190b2e605ee0146e0fea269c401568a5759983b
 <body>
     <img src="F1-logo.png" id="websiteLogo" alt="Website Logo">
     <h1>Formula One</h1>
     <p>
+<<<<<<< HEAD
         This visualization represents the locations of various circuits around the world. Hover over the points on the map to view more details.
     </p>
 
@@ -61,6 +86,21 @@
     <script>
         const embedOptions = { mode: "vega-lite", actions: false };
     window.onload = function() {
+=======
+        This visualization represents the locations of various circuits around the world. The data includes the names, locations, and countries of these circuits. Hover over the points on the map to view more details about each circuit.
+    </p>
+
+    <div id="vis"></div>
+    
+    <div class="filter-container">
+        <label for="yearSelection">Select Year: </label>
+        <input type="range" id="yearSelection" min="1950" max="2023" value="1950">
+        <span id="yearDisplay">1950</span> <!-- Display the currently selected year -->
+    </div>
+
+
+    <script>
+>>>>>>> b190b2e605ee0146e0fea269c401568a5759983b
         const spec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "title": "Circuits on World Map",
@@ -111,6 +151,7 @@
             "config": {}
         };
 
+<<<<<<< HEAD
         function renderChart() {
             const selectedYear = document.getElementById('yearSelection').value;
             if (selectedYear === "all") {
@@ -122,10 +163,28 @@
         }
 
         // Initial renders
+=======
+        const embedOptions = { mode: "vega-lite", actions: false };
+
+        function renderChart() {
+        // Update the spec's filter based on the dropdown value
+        const selectedYear = document.getElementById('yearSelection').value;
+        if (selectedYear === "all") {
+            spec.layer[2].transform[0].filter = "true"; // Show all data if "all" is selected
+        } else {
+            spec.layer[2].transform[0].filter = `datum.AllYears == ${selectedYear}`;
+        }
+
+        vegaEmbed("#vis", spec, embedOptions).then(console.log).catch(console.warn);
+    }
+
+        // Initial render
+>>>>>>> b190b2e605ee0146e0fea269c401568a5759983b
         renderChart();
 
         // Re-render on selection change
         document.getElementById('yearSelection').addEventListener('input', function() {
+<<<<<<< HEAD
             document.getElementById('yearDisplay').textContent = this.value;
             renderChart()
         });
@@ -143,3 +202,14 @@
     </script>
 </body>
 </html>
+=======
+    // Update displayed year
+    document.getElementById('yearDisplay').textContent = this.value;
+    // Re-render the chart
+    renderChart();
+});
+
+    </script>
+</body>
+</html>
+>>>>>>> b190b2e605ee0146e0fea269c401568a5759983b
