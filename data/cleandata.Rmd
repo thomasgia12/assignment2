@@ -1,0 +1,58 @@
+---
+title: "cleandata"
+author: "Thomas Giannatos"
+date: "2023-09-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(dplyr)
+library(openxlsx)
+```
+
+```{r}
+data <- read_csv("races.csv")
+```
+
+```{r}
+# Function to generate years from a given range
+get_years_from_range <- function(range) {
+  start_end <- as.integer(strsplit(range, "-")[[1]])
+  if(length(start_end) == 1) {
+    return(start_end)
+  } else {
+    return(seq(start_end[1], start_end[2]))
+  }
+}
+
+# Function to get all individual years from the given date ranges
+get_all_years <- function(date_ranges) {
+  ranges <- strsplit(date_ranges, ", ")[[1]]
+  all_years <- unlist(lapply(ranges, get_years_from_range))
+  # Intersect with all years from 1950 to 2023 to get desired result
+  return(intersect(all_years, 1950:2023))
+}
+
+# Apply function on Dates column and store results in a new column named AllYears
+data$AllYears <- sapply(data$Dates, function(x) list(get_all_years(x)))
+
+# Display results
+print(data)
+
+```
+
+```{r}
+data_long <- data %>% 
+  unnest(AllYears) %>%
+  select(-Dates)
+
+print(data_long)
+```
+
+```{r}
+write.xlsx(data_long, "~/Downloads/longdata.csv", overwrite = TRUE)
+```
+
+

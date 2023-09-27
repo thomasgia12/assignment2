@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formula One Winners</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282828;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #winnersChart, .filter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+
+        label, #yearDisplay {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Formula One</h1>
+
+    <h2 style="text-align:center;">Race Winners by Year</h2>
+    <div class="filter-container">
+        <label for="yearSelection">Select Year: </label>
+        <input type="range" id="yearSelection" min="1950" max="2023" value="1950">
+        <span id="yearDisplay">1950</span>
+    </div>
+    <div id="winnersChart"></div>
+
+    <script>
+        const embedOptions = { mode: "vega-lite", actions: false };
+
+        function renderWinnersChart() {
+            const selectedYear = document.getElementById('yearSelection').value;
+
+            const winnersSpec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "title": "Race Winners for " + selectedYear,
+                "data": {"url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/data/combinedexcels.csv"},
+                "transform": [
+                    {
+                        "filter": `(datum.FinalPosition == 1) && (datum.Year == ${selectedYear})`
+                    },
+                    {
+                        "calculate": "datum.First + ' ' + datum.Last",
+                        "as": "FullName"
+                    }
+                ],
+
+                "mark": "bar",
+                "encoding": {
+                    "y": {"field": "Race", "type": "nominal", "title": "Race Name"},
+                    "x": {"aggregate": "count", "type": "quantitative", "title": "Wins"},
+                    "color": {
+                        "field": "FullName", 
+                        "type": "nominal", 
+                        "title": "Driver",
+                        "sort": "-x"
+                    },
+                    "tooltip": [
+                        {
+                            "field": "FullName",
+                            "type": "nominal",
+                            "title": "Driver"
+                        },
+                        {"field": "time", "type": "nominal", "title": "Winning Time"}
+                    ]
+                }
+            };
+
+            vegaEmbed("#winnersChart", winnersSpec, embedOptions).then(console.log).catch(console.warn);
+        }
+
+        // Initial render
+        renderWinnersChart();
+
+        // Re-render on selection change
+        document.getElementById('yearSelection').addEventListener('input', function() {
+            document.getElementById('yearDisplay').textContent = this.value;
+            renderWinnersChart();
+        });
+    </script>
+</body>
+</html>
+

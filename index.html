@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Circuits on World Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(35, 34, 34);
+            background: radial-gradient(black 15%, transparent 16%) 0 0,
+                radial-gradient(black 15%, transparent 16%) 8px 8px,
+                radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+                radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+            background-color: #282828;
+            background-size: 16px 16px;
+            color: white;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            width: 800px;
+            margin: 20px auto;
+        }
+
+        #vis, .filter-container, #lineChart, #winnersChart {
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+        }
+        #websiteLogo {
+            margin: 10px;
+            width: 100px;
+        }
+        label, #yearDisplay {
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <img src="F1-logo.png" id="websiteLogo" alt="Website Logo">
+    <h1>Formula One</h1>
+    <p>
+        This visualization represents the locations of various circuits around the world. Hover over the points on the map to view more details.
+    </p>
+
+    <div id="vis"></div>
+    <div class="filter-container">
+        <label for="yearSelection">Select Year: </label>
+        <input type="range" id="yearSelection" min="1950" max="2023" value="1950">
+        <span id="yearDisplay">1950</span>
+    </div>
+
+    <script>
+        const embedOptions = { mode: "vega-lite", actions: false };
+    window.onload = function() {
+        const spec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "title": "Circuits on World Map",
+            "width": 800,
+            "height": 400,
+            "data": {
+                "url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/js/ne_110m.topojson",
+                "format": {
+                    "type": "topojson",
+                    "feature": "countries"
+                }
+            },
+            "projection": { "type": "equalEarth" },
+            "layer": [
+                {
+                    "mark": { "type": "geoshape", "fill": "lightgray", "stroke": "white" }
+                },
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+                        "format": { "type": "topojson", "feature": "oceans" }
+                    },
+                    "mark": { "type": "geoshape", "fill": "skyblue" }
+                },
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/data/longdata1.csv",
+                        "format": { "type": "csv" }
+                    },
+                    "transform": [{
+                        "filter": `datum.AllYears == (datum.AllYears == null ? true : document.getElementById('yearSelection').value)`
+                    }],
+                    "mark": {
+                        "type": "circle",
+                        "color": "red"
+                    },
+                    "encoding": {
+                        "longitude": { "field": "lng", "type": "quantitative" },
+                        "latitude": { "field": "lat", "type": "quantitative" },
+                        "tooltip": [
+                            { "field": "name", "type": "nominal", "title": "Circuit Name" },
+                            { "field": "location", "type": "nominal", "title": "Location" },
+                            { "field": "country", "type": "nominal", "title": "Country" }
+                        ]
+                    }
+                }
+            ],
+            "config": {}
+        };
+
+        function renderChart() {
+            const selectedYear = document.getElementById('yearSelection').value;
+            if (selectedYear === "all") {
+                spec.layer[2].transform[0].filter = "true";
+            } else {
+                spec.layer[2].transform[0].filter = `datum.AllYears == ${selectedYear}`;
+            }
+            vegaEmbed("#vis", spec, embedOptions).then(console.log).catch(console.warn);
+        }
+
+        // Initial renders
+        renderChart();
+
+        // Re-render on selection change
+        document.getElementById('yearSelection').addEventListener('input', function() {
+            document.getElementById('yearDisplay').textContent = this.value;
+            renderChart()
+        });
+    };
+    let top10driversData;
+    fetch('top10drivers.json')
+    .then(response => response.json())
+    .then(data => {
+        top10driversData = data;
+        initializeChartWithTop10DriversData();
+    })
+    .catch(error => {
+        console.error("Error fetching the top10drivers data:", error);
+    });
+    </script>
+</body>
+</html>

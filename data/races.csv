@@ -1,0 +1,78 @@
+circuitId,circuitRef,name,location,country,Dates,lat,lng,alt,url
+1,albert_park,Albert Park Grand Prix Circuit,Melbourne,Australia,1996-2023,-37.8497,144.968,10,http://en.wikipedia.org/wiki/Melbourne_Grand_Prix_Circuit
+2,sepang,Sepang International Circuit,Kuala Lumpur,Malaysia,1999-2017,2.76083,101.738,18,http://en.wikipedia.org/wiki/Sepang_International_Circuit
+3,bahrain,Bahrain International Circuit,Sakhir,Bahrain,"2004-2010, 2012-2023",26.0325,50.5106,7,http://en.wikipedia.org/wiki/Bahrain_International_Circuit
+4,catalunya,Circuit de Barcelona-Catalunya,Montmeló,Spain,1991-2022,41.57,2.26111,109,http://en.wikipedia.org/wiki/Circuit_de_Barcelona-Catalunya
+5,istanbul,Istanbul Park,Istanbul,Turkey,"2005-2011, 2020-21",40.9517,29.405,130,http://en.wikipedia.org/wiki/Istanbul_Park
+6,monaco,Circuit de Monaco,Monte-Carlo,Monaco,"1950, 1955-2019, 2021-2023",43.7347,7.42056,7,http://en.wikipedia.org/wiki/Circuit_de_Monaco
+7,villeneuve,Circuit Gilles Villeneuve,Montreal,Canada,"1978-2019, 2022",45.5,-73.5228,13,http://en.wikipedia.org/wiki/Circuit_Gilles_Villeneuve
+8,magny_cours,Circuit de Nevers Magny-Cours,Magny Cours,France,1991-2008,46.8642,3.16361,228,http://en.wikipedia.org/wiki/Circuit_de_Nevers_Magny-Cours
+9,silverstone,Silverstone Circuit,Silverstone,UK,"1950-2019, 2021-2022",52.0786,-1.01694,153,http://en.wikipedia.org/wiki/Silverstone_Circuit
+10,hockenheimring,Hockenheimring,Hockenheim,Germany,"1970, 1977-2006, 2008, 2010, 2012, 2014, 2016, 2018-2019",49.3278,8.56583,103,http://en.wikipedia.org/wiki/Hockenheimring
+11,hungaroring,Hungaroring,Budapest,Hungary,1986-2022,47.5789,19.2486,264,http://en.wikipedia.org/wiki/Hungaroring
+12,valencia,Valencia Street Circuit,Valencia,Spain,2008-2012,39.4589,-0.331667,4,http://en.wikipedia.org/wiki/Valencia_Street_Circuit
+13,spa,Circuit de Spa-Francorchamps,Spa,Belgium,"1950-1956, 1958, 1960-1968, 1970, 1983, 1985-2019, 2021-2022",50.4372,5.97139,401,http://en.wikipedia.org/wiki/Circuit_de_Spa-Francorchamps
+14,monza,Autodromo Nazionale di Monza,Monza,Italy,"1950-2019, 2021-2022",45.6156,9.28111,162,http://en.wikipedia.org/wiki/Autodromo_Nazionale_Monza
+15,marina_bay,Marina Bay Street Circuit,Marina Bay,Singapore,"2008-2019, 2022",1.2914,103.864,18,http://en.wikipedia.org/wiki/Marina_Bay_Street_Circuit
+16,fuji,Fuji Speedway,Oyama,Japan,"1976-1977, 2007-2008 ",35.3717,138.927,583,http://en.wikipedia.org/wiki/Fuji_Speedway
+17,shanghai,Shanghai International Circuit,Shanghai,China,2004-2019,31.3389,121.22,5,http://en.wikipedia.org/wiki/Shanghai_International_Circuit
+18,interlagos,Autódromo José Carlos Pace,São Paulo,Brazil,"1973, 1975-2019, 2021-2022",-23.7036,-46.6997,785,http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Jos%C3%A9_Carlos_Pace
+19,indianapolis,Indianapolis Motor Speedway,Indianapolis,USA,2000-2007,39.795,-86.2347,223,http://en.wikipedia.org/wiki/Indianapolis_Motor_Speedway
+20,nurburgring,Nürburgring,Nürburg,Germany,"1951, 1954, 1961, 1969-1976, 1984-1985, 1995-2006, 2009, 2011, 2013, 2020 ",50.3356,6.9475,578,http://en.wikipedia.org/wiki/N%C3%BCrburgring
+21,imola,Autodromo Enzo e Dino Ferrari,Imola,Italy,"1980-2006, 2020, 2022",44.3439,11.7167,37,http://en.wikipedia.org/wiki/Autodromo_Enzo_e_Dino_Ferrari
+22,suzuka,Suzuka Circuit,Suzuka,Japan,"1987-2006, 2009-2019, 2022",34.8431,136.541,45,http://en.wikipedia.org/wiki/Suzuka_Circuit
+80,vegas,Las Vegas Strip Street Circuit,Las Vegas,United States,2023,36.1147,-115.173,\N,https://en.wikipedia.org/wiki/Las_Vegas_Grand_Prix#Circuit
+24,yas_marina,Yas Marina Circuit,Abu Dhabi,UAE,2009-2022,24.4672,54.6031,3,http://en.wikipedia.org/wiki/Yas_Marina_Circuit
+25,galvez,Autódromo Juan y Oscar Gálvez,Buenos Aires,Argentina,"1972-1975, 1977-1981, 1995-1998",-34.6943,-58.4593,8,http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Oscar_Alfredo_G%C3%A1lvez
+26,jerez,Circuito de Jerez,Jerez de la Frontera,Spain,"1986-1990, 1994, 1997",36.7083,-6.03417,37,http://en.wikipedia.org/wiki/Circuito_Permanente_de_Jerez
+27,estoril,Autódromo do Estoril,Estoril,Portugal,1984-1996,38.7506,-9.39417,130,http://en.wikipedia.org/wiki/Aut%C3%B3dromo_do_Estoril
+28,okayama,Okayama International Circuit,Okayama,Japan,1994-1995,34.915,134.221,266,http://en.wikipedia.org/wiki/TI_Circuit
+29,adelaide,Adelaide Street Circuit,Adelaide,Australia,1985-1995,-34.9272,138.617,58,http://en.wikipedia.org/wiki/Adelaide_Street_Circuit
+30,kyalami,Kyalami,Midrand,South Africa,"1967-1985, 1992-1993",-25.9894,28.0767,1460,http://en.wikipedia.org/wiki/Kyalami
+31,donington,Donington Park,Castle Donington,UK,1993,52.8306,-1.37528,88,http://en.wikipedia.org/wiki/Donington_Park
+32,rodriguez,Autódromo Hermanos Rodríguez,Mexico City,Mexico,"1963-1970, 1986-1992, 2015-2019, 2022",19.4042,-99.0907,2227,http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Hermanos_Rodr%C3%ADguez
+33,phoenix,Phoenix street circuit,Phoenix,USA,1989-1991,33.4479,-112.075,345,http://en.wikipedia.org/wiki/Phoenix_street_circuit
+34,ricard,Circuit Paul Ricard,Le Castellet,France,"1971, 1973, 1975-1976, 1978, 1980, 1982-1983, 1985-1990, 2018-2019, 2022",43.2506,5.79167,432,http://en.wikipedia.org/wiki/Paul_Ricard_Circuit
+35,yeongam,Korean International Circuit,Yeongam County,Korea,2010-2013,34.7333,126.417,0,http://en.wikipedia.org/wiki/Korean_International_Circuit
+36,jacarepagua,Autódromo Internacional Nelson Piquet,Rio de Janeiro,Brazil,"1978, 1981-1989",-22.9756,-43.395,1126,http://en.wikipedia.org/wiki/Aut%C3%B3dromo_Internacional_Nelson_Piquet
+37,detroit,Detroit Street Circuit,Detroit,USA,1982-1988,42.3298,-83.0401,177,http://en.wikipedia.org/wiki/Detroit_street_circuit
+38,brands_hatch,Brands Hatch,Kent,UK,"1964, 1966, 1968, 1970, 1972, 1974, 1976, 1978, 1980, 1982, 1984, 1986",51.3569,0.263056,145,http://en.wikipedia.org/wiki/Brands_Hatch
+39,zandvoort,Circuit Park Zandvoort,Zandvoort,Netherlands,"1952-1953, 1955, 1958-1971, 1973-1985, 2020-2022",52.3888,4.54092,6,http://en.wikipedia.org/wiki/Circuit_Zandvoort
+40,zolder,Zolder,Heusden-Zolder,Belgium,"1973, 1975-1982, 1984",50.9894,5.25694,36,http://en.wikipedia.org/wiki/Zolder
+41,dijon,Dijon-Prenois,Dijon,France,"1974, 1977, 1979, 1981, 1984",47.3625,4.89913,484,http://en.wikipedia.org/wiki/Dijon-Prenois
+42,dallas,Fair Park,Dallas,USA,1984,32.7774,-96.7587,139,http://en.wikipedia.org/wiki/Fair_Park
+43,long_beach,Long Beach,California,USA,1976-1983,33.7651,-118.189,12,"http://en.wikipedia.org/wiki/Long_Beach,_California"
+44,las_vegas,Las Vegas Street Circuit,Nevada,USA,1981-1982,36.1162,-115.174,639,http://en.wikipedia.org/wiki/Las_Vegas_Street_Circuit
+45,jarama,Jarama,Madrid,Spain,"1967-1968, 1970, 1972, 1974, 1976-1977, 1979, 1981",40.6171,-3.58558,609,http://en.wikipedia.org/wiki/Circuito_Permanente_Del_Jarama
+46,watkins_glen,Watkins Glen,New York State,USA,1961-1980,42.3369,-76.9272,485,http://en.wikipedia.org/wiki/Watkins_Glen_International
+47,anderstorp,Scandinavian Raceway,Anderstorp,Sweden,"1973, 1974, 1976, 1978",57.2653,13.6042,153,http://en.wikipedia.org/wiki/Scandinavian_Raceway
+48,mosport,Mosport International Raceway,Ontario,Canada,"1967, 1969, 1971-1974, 1976-1977",44.0481,-78.6756,332,http://en.wikipedia.org/wiki/Mosport
+49,montjuic,Montjuïc,Barcelona,Spain,"1969, 1971, 1973, 1975",41.3664,2.15167,79,http://en.wikipedia.org/wiki/Montju%C3%AFc_circuit
+50,nivelles,Nivelles-Baulers,Brussels,Belgium,"1972, 1974",50.6211,4.32694,139,http://en.wikipedia.org/wiki/Nivelles-Baulers
+51,charade,Charade Circuit,Clermont-Ferrand,France,"1965, 1969-1970, 1972",45.7472,3.03889,790,http://en.wikipedia.org/wiki/Charade_Circuit
+52,tremblant,Circuit Mont-Tremblant,Quebec,Canada,"1968, 1970",46.1877,-74.6099,214,http://en.wikipedia.org/wiki/Circuit_Mont-Tremblant
+53,essarts,Rouen-Les-Essarts,Rouen,France,"1952, 1957, 1962, 1964, 1968",49.3306,1.00458,81,http://en.wikipedia.org/wiki/Rouen-Les-Essarts
+54,lemans,Le Mans,Le Mans,France,,47.95,0.224231,67,http://en.wikipedia.org/wiki/Circuit_de_la_Sarthe#Bugatti_Circuit
+55,reims,Reims-Gueux,Reims,France,"1950-1951, 1953-1954, 1956, 1958-1961, 1963, 1966",49.2542,3.93083,88,http://en.wikipedia.org/wiki/Reims-Gueux
+56,george,Prince George Circuit,Eastern Cape Province,South Africa,1965,-33.0486,27.8736,15,http://en.wikipedia.org/wiki/Prince_George_Circuit
+57,zeltweg,Zeltweg,Styria,Austria,1964,47.2039,14.7478,676,http://en.wikipedia.org/wiki/Zeltweg_Airfield
+58,aintree,Aintree,Liverpool,UK,"1955, 1957, 1959, 1961-1962",53.4769,-2.94056,20,http://en.wikipedia.org/wiki/Aintree_Motor_Racing_Circuit
+59,boavista,Circuito da Boavista,Oporto,Portugal,"1958, 1960",41.1705,-8.67325,28,http://en.wikipedia.org/wiki/Circuito_da_Boavista
+60,riverside,Riverside International Raceway,California,USA,1960,33.937,-117.273,470,http://en.wikipedia.org/wiki/Riverside_International_Raceway
+61,avus,AVUS,Berlin,Germany,1959,52.4806,13.2514,53,http://en.wikipedia.org/wiki/AVUS
+62,monsanto,Monsanto Park Circuit,Lisbon,Portugal,1959,38.7197,-9.20306,158,http://en.wikipedia.org/wiki/Monsanto_Park_Circuit
+63,sebring,Sebring International Raceway,Florida,USA,1959,27.4547,-81.3483,18,http://en.wikipedia.org/wiki/Sebring_Raceway
+64,ain-diab,Ain Diab,Casablanca,Morocco,1958,33.5786,-7.6875,19,http://en.wikipedia.org/wiki/Ain-Diab_Circuit
+65,pescara,Pescara Circuit,Pescara,Italy,1957,42.475,14.1508,129,http://en.wikipedia.org/wiki/Pescara_Circuit
+66,bremgarten,Circuit Bremgarten,Bern,Switzerland,1950-1954,46.9589,7.40194,551,http://en.wikipedia.org/wiki/Circuit_Bremgarten
+67,pedralbes,Circuit de Pedralbes,Barcelona,Spain,"1951, 1954",41.3903,2.11667,85,http://en.wikipedia.org/wiki/Pedralbes_Circuit
+68,buddh,Buddh International Circuit,Uttar Pradesh,India,2011-2013,28.3487,77.5331,194,http://en.wikipedia.org/wiki/Buddh_International_Circuit
+69,americas,Circuit of the Americas,Austin,USA,"2012-2019, 2021-2022",30.1328,-97.6411,161,http://en.wikipedia.org/wiki/Circuit_of_the_Americas
+70,red_bull_ring,Red Bull Ring,Spielberg,Austria,"1970-1987, 1997-2003, 2014-2022",47.2197,14.7647,678,http://en.wikipedia.org/wiki/Red_Bull_Ring
+71,sochi,Sochi Autodrom,Sochi,Russia,2014-2021,43.4057,39.9578,2,http://en.wikipedia.org/wiki/Sochi_Autodrom
+73,baku,Baku City Circuit,Baku,Azerbaijan,"2016-2019, 2021-2023",40.3725,49.8533,-7,http://en.wikipedia.org/wiki/Baku_City_Circuit
+75,portimao,Autódromo Internacional do Algarve,Portimão,Portugal,2020-2021,37.227,-8.6267,108,http://en.wikipedia.org/wiki/Algarve_International_Circuit
+76,mugello,Autodromo Internazionale del Mugello,Mugello,Italy,2020,43.9975,11.3719,255,http://en.wikipedia.org/wiki/Mugello_Circuit
+77,jeddah,Jeddah Corniche Circuit,Jeddah,Saudi Arabia,2021-2023,21.6319,39.1044,15,http://en.wikipedia.org/wiki/Jeddah_Street_Circuit
+78,losail,Losail International Circuit,Al Daayen,Qatar,,25.49,51.4542,\N,http://en.wikipedia.org/wiki/Losail_International_Circuit
+79,miami,Miami International Autodrome,Miami,USA,2022-2023,25.9581,-80.2389,\N,http://en.wikipedia.org/wiki/Miami_International_Autodrome
