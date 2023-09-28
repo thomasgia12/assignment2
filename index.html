@@ -1,153 +1,323 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Formula One</title>
+<!--
+Short HTML Template
+http://www.templatemo.com/tm-502-short
+-->
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<head>
-    <title>Circuits on World Map</title>
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: rgb(35, 34, 34);
-            background: radial-gradient(black 15%, transparent 16%) 0 0,
-                radial-gradient(black 15%, transparent 16%) 8px 8px,
-                radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
-                radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-            background-color: #282828;
-            background-size: 16px 16px;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-        }
-        p {
-            width: 800px;
-            margin: 20px auto;
-        }
-        #vis, .filter-container, #lineChart, #winnersChart {
-            max-width: 800px;
-            margin: 0 auto;
-            display: block;
-            text-align: center;
-        }
-        #websiteLogo {
-            margin: 10px;
-            width: 100px;
-        }
-        #vis, .filter-container {
-            max-width: 800px;  /* adjust this value based on your desired width */
-            margin: 0 auto;    /* This centers the block on the page */
-            display: block;    /* Ensure they're treated as block elements */
-            text-align: center; /* This centers the inner elements of the filter-container */
-        }
-        #websiteLogo {
-            margin: 10px;  /* Adjust as needed */
-             width: 100px; /* Adjust based on your logo's size */
-    /* You can set other properties as needed, such as height, etc. */
-        }
-        label, #yearDisplay {
-            color: white;
-        }
-    </style>
-</head>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/easy-responsive-tabs.min.css">
+        <link rel="stylesheet" href="css/tabs.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
 
-<body>
-    <img src="F1-logo.png" id="websiteLogo" alt="Website Logo">
-    <h1>Formula One</h1>
-    <p>
-        This visualization represents the locations of various circuits around the world. Hover over the points on the map to view more details.
-    </p>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-    <div id="vis"></div>
-    <div class="filter-container">
-        <label for="yearSelection">Select Year: </label>
-        <input type="range" id="yearSelection" min="1950" max="2023" value="1950">
-        <span id="yearDisplay">1950</span>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+    <!-- Laoding page  -->
+    <div class="preloader">
+      <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+      </div>
     </div>
+    <!-- End Laoding page  -->
 
-    <script>
-        const embedOptions = { mode: "vega-lite", actions: false };
-        const spec = {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "title": "Circuits on World Map",
-            "width": 800,
-            "height": 400,
-            "data": {
-                "url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/js/ne_110m.topojson",
-                "format": {
-                    "type": "topojson",
-                    "feature": "countries"
-                }
-            },
-            "projection": { "type": "equalEarth" },
-            "layer": [
-                {
-                    "mark": { "type": "geoshape", "fill": "lightgray", "stroke": "white" }
-                },
-                {
-                    "data": {
-                        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
-                        "format": { "type": "topojson", "feature": "oceans" }
-                    },
-                    "mark": { "type": "geoshape", "fill": "skyblue" }
-                },
-                {
-                    "data": {
-                        "url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/data/longdata1.csv",
-                        "format": { "type": "csv" }
-                    },
-                    "transform": [{
-                        "filter": `datum.AllYears == (datum.AllYears == null ? true : document.getElementById('yearSelection').value)`
-                    }],
-                    "mark": {
-                        "type": "circle",
-                        "color": "red"
-                    },
-                    "encoding": {
-                        "longitude": { "field": "lng", "type": "quantitative" },
-                        "latitude": { "field": "lat", "type": "quantitative" },
-                        "tooltip": [
-                            { "field": "name", "type": "nominal", "title": "Circuit Name" },
-                            { "field": "location", "type": "nominal", "title": "Location" },
-                            { "field": "country", "type": "nominal", "title": "Country" }
-                        ]
-                    }
-                }
-            ],
-            "config": {}
-        };
+    <!-- Begin HorizontalTab style 6 -->
+    <section class="section-full image-bg">
 
-        function renderChart() {
-            const selectedYear = document.getElementById('yearSelection').value;
-            if (selectedYear === "all") {
-                spec.layer[2].transform[0].filter = "true";
-            } else {
-                spec.layer[2].transform[0].filter = `datum.AllYears == ${selectedYear}`;
-            }
-            vegaEmbed("#vis", spec, embedOptions).then(console.log).catch(console.warn);
-        }
+      <div class="container">
 
-        function renderChart() {
-        // Update the spec's filter based on the dropdown value
-        const selectedYear = document.getElementById('yearSelection').value;
-        if (selectedYear === "all") {
-            spec.layer[2].transform[0].filter = "true"; // Show all data if "all" is selected
-        } else {
-            spec.layer[2].transform[0].filter = `datum.AllYears == ${selectedYear}`;
-        }
+        <div class="row">
 
-        vegaEmbed("#vis", spec, embedOptions).then(console.log).catch(console.warn);
-    }
+          <div class="col-md-12">
 
-        // Initial render
-        renderChart();
+            <a href="index.html"><div class="responsive-logo hidden-lg hidden-md hidden-sm"><img src="img/F1-logocopy.png"></div></a>
+            
+            <!-- Begin .HorizontalTab -->
+            <div class="VerticalTab VerticalTab_hash_scroll VerticalTab_6 tabs_ver_6">
+            
+              <ul class="resp-tabs-list hor_1">
+                <a href="index.html"><div class="logo"><img src="img/F1-logocopy.png"></div></a>
+                <li class="tabs-1" data-tab-name="profile"><span class="tabs-text">Formula One in a Nutshell</span></li>
+                <li class="tabs-2" data-tab-name="resume"><span class="tabs-text">World Map</span></li>
+                <li class="tabs-3" data-tab-name="portfolio"><span class="tabs-text">Drivers</span></li>             
+                <li class="tabs-4" data-tab-name="contact"><span class="tabs-text">Constructor Teams</span></li>
+              </ul>
+              
+              <div class="resp-tabs-container hor_1 tabs_scroll">
+                
+                <div class="fc-tab-1">
+                
+                  <div class="home-container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="left-content">
+                          <div class="left-line"></div>  
+                          <h2>Formula One Data</h2>
+                          <p>This visualization represents the locations of various circuits around the world. Hover over the points on the map to view more details.</p>
+                          <div class="primary-button">
+                            <a href="#">Discover More</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="right-content">
+                          <img src="img/ferrari-f1.jpeg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="fc-tab-2">
+                  <div class="about-container">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h2>More info about <em>the circuits</em></h2>
+                              <div class="under-line"></div>
+                              <p>This visualization represents the locations of various circuits around the world. Hover over the points on the map to view more details.</p>
+                              <div class="about-container">
+                                  <div class="row">
+                                      <div class="col-md-12">
+                                          <div id="vis"></div>
+                                          <div class="filter-container">
+                                              <label for="yearSelection">Select Year: </label>
+                                              <input type="range" id="yearSelection" min="1950" max="2023" value="1950">
+                                              <span id="yearDisplay">1950</span>
+                                          </div>
+                                          <!-- BEGIN Modification: Placeholder for Visualization -->
+                                          <!-- END Modification -->
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
 
-        // Re-render on selection change
-        document.getElementById('yearSelection').addEventListener('input', function() {
-            document.getElementById('yearDisplay').textContent = this.value;
-            renderChart()
-        });
-    </script>
-</body>
-</html
+                <div class="fc-tab-3">
+
+                  <div class="owl-carousel owl-theme projects-container">
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Awesome Project</h4>
+                              <a href="img/item-01.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-01.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Awesome Two</h4>
+                              <a href="img/item-02.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-02.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Awesome Three</h4>
+                              <a href="img/item-03.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-03.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Project Four</h4>
+                              <a href="img/item-04.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-04.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Fifth Project</h4>
+                              <a href="img/item-05.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-05.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Sixth Project</h4>
+                              <a href="img/item-06.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-06.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Project Seven</h4>
+                              <a href="img/item-07.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-07.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Awesome Eight</h4>
+                              <a href="img/item-02.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-02.jpg">
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="project-item">
+                        <div class="thumb-holder">
+                          <div class="hover-effect">
+                            <div class="hover-content">
+                              <h4>Awesome Nine</h4>
+                              <a href="img/item-01.jpg" data-lightbox="image-1"><img src="img/project-icon.png"></a>
+                            </div>
+                          </div>
+                          <img src="img/project-item-01.jpg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="fc-tab-4">
+                
+                  <div class="contact-container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="contact-form">
+                          <div class="heading">
+                            <h2>Say Hello</h2>
+                          </div>
+                          <form id="contact" action="" method="post">
+                            <fieldset>
+                              <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required="">
+                            </fieldset>
+                            <fieldset>
+                              <input name="email" type="email" class="form-control" id="email" placeholder="Email" required="">
+                            </fieldset>
+                            <fieldset>
+                              <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required=""></textarea>
+                            </fieldset>
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="btn">Submit</button>
+                            </fieldset>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="more-info">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc purus ligula, ullamcorper id velit id, vestibulum auctor sapien. Sed quis mauris eget sem <em>imperdiet rhoncus hendrerit</em> sed neque.<br><br>Praesent dictum at erat <em>consectetur imperdiet</em>. Vivamus lobortis eros quis elementum egestas. Fusce sed lorem sed tellus convallis pulvinar non eget erat. Nunc sapien mauris, molestie sed interdum vel, pharetra et metus.<br><br><em>1142 Bee Street<br>Grand Rapids, MI 49503</em></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                
+              </div>
+            </div>
+            <!-- End .HorizontalTab -->
+          
+          </div>
+          
+        </div>
+        
+      </div>
+
+    </section>
+    <!-- End HorizontalTab style 6 -->
+    
+
+      <footer>
+        <p>Copyright &copy; 2023 Thomas Giannatos
+                                
+        | Design: <a href="http://www.templatemo.com" target="_parent"><em>template mo</em></a></p>
+      </footer>
+    </div> <!-- /container -->        
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="js/easyResponsiveTabs.js"></script>  
+        <script src="js/chartLogic.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    
+
+    </body>
+</html>
