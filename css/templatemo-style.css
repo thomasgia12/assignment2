@@ -129,13 +129,13 @@ body {
  }
 
  .home-container .left-content {
-    padding-top: 25%;
+    padding-top: 20%;
     padding-left: 35px;
  }
 
  .home-container .left-content .left-line {
     width: 3px;
-    height: 74px;
+    height: 60px;
     background-color: #121212;
     float: left;
     margin-right: 15px;
@@ -156,14 +156,13 @@ body {
   }
 
   .home-container .left-content p {
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 14px;
-    font-style: italic;
     color: #343434;
   }
 
   .home-container .left-content p em {
-    font-weight: 500;
+    font-weight: 100;
   }
 
   .home-container .left-content .primary-button {
@@ -209,9 +208,11 @@ body {
 .about-container {
   text-align: center;
   background-color: #fff;
-  margin-top: 80%;
-  margin: 65px;
-  padding: 0;
+  margin-top: 100%;
+  margin: 70px;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .about-container h2 {
@@ -219,7 +220,7 @@ body {
   letter-spacing: 0.5px;
   color: #121212;
   text-transform: uppercase;
-  margin: 40px;
+  margin: 45px 15px 0px 15px;
   margin-bottom: 0px;
   font-weight: 900;
 }
@@ -262,16 +263,42 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  width: 800px;
-  height: 425px;
+  width: 750px;
+  height: 450px;
   margin-top: 40%;
 }
 
-.project-item {
+.projects-item {
   position: relative;
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+}
+
+.projects-container p {
+  font-size: 14px;
+  color: #343434;
+  margin: 15px 15px 15px 15px;
+}
+
+.projects-container h2 {
+  font-size: 24px;
+  letter-spacing: 0.5px;
+  color: #121212;
+  text-transform: uppercase;
+  margin: 40px 15px 0px 15px;
+  margin-bottom: 0px;
+  font-weight: 900;
+}
+
+.projects-container h2 em {
+  font-style: normal;
+  color: #f78b26;
+}
+
+.projects-container p em {
+  font-weight: 500;
+  font-style: normal;
 }
 
 .info-section, .graphs-section {
@@ -282,10 +309,16 @@ body {
 .graphs-section {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 85%;
 }
 
-
+.project-container .left-content .left-line {
+  width: 3px;
+  height: 60px;
+  background-color: #121212;
+  float: left;
+  margin-right: 15px;
+}
 
 
 /*

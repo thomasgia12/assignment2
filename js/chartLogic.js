@@ -1,7 +1,7 @@
 // Vega-Lite specification
 var spec = {
-    "width": 600,  // Add this line, adjust value as needed
-    "height": 450, // Add this line, adjust value as needed
+    "width": 550,  // Add this line, adjust value as needed
+    "height": 400, // Add this line, adjust value as needed
     "layer": [
         {
             "data": {

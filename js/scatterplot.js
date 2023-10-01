@@ -27,14 +27,14 @@ const fastestLapTimesChart = {
       "y": {
         "field": "minutes",
         "type": "quantitative",
-        "axis": {"title": "Fastest Lap Time (in minutes)"}
+        "axis": {"title": "Time to finish in Monza (in minutes)"}
       },
       "tooltip": [
         {"field": "Year", "type": "quantitative", "title": "Year"},
         {
           "field": "minutes",
           "type": "quantitative",
-          "title": "Fastest Lap Time (minutes)"
+          "title": "Fastest Time (minutes)"
         },
         {"field": "First", "type": "nominal", "title": "Driver First Name"},
         {"field": "Last", "type": "nominal", "title": "Driver Last Name"},
