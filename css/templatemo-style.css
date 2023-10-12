@@ -208,11 +208,12 @@ body {
 .about-container {
   text-align: center;
   background-color: #fff;
-  margin-top: 100%;
+  margin-top: 300px;
   margin: 70px;
   align-items: center;
   display: flex;
   justify-content: space-evenly;
+  
 }
 
 .about-container h2 {
@@ -248,7 +249,7 @@ body {
 }
 
 .about-container img {
-  width: 70%;
+  width: 100%;
 }
 
 /*
@@ -268,12 +269,12 @@ body {
   margin-top: 40%;
 }
 
-.projects-item {
-  position: relative;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
+.project-item {
+  flex: 1; /* Each graph will take up equal width */
+  text-align: center; /* Center the graph content if it doesn't span the full width */
+  padding: 0 10px; /* Optional: Add some padding for spacing between graphs */
 }
+
 
 .projects-container p {
   font-size: 14px;
@@ -302,23 +303,31 @@ body {
 }
 
 .info-section, .graphs-section {
-  width: 85%;
+  width: 90%;
   position: relative;
 }
 
 .graphs-section {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: baseline; 
 }
 
-.project-container .left-content .left-line {
-  width: 3px;
-  height: 60px;
-  background-color: #121212;
-  float: left;
-  margin-right: 15px;
+
+.paragraphs-container {
+  width: 90%; /* make sure it takes up the full width */
+  display: flex;
+  justify-content: space-between;  
+  margin: 20px 0;
 }
+
+.paragraphs-container p {
+  flex: 0 0 49%;  /* Each paragraph will try to occupy nearly half the space minus the margin */
+  margin: 0 2%;
+  box-sizing: border-box;  /* This ensures the margin is included in the width */
+}
+
+
 
 
 /*
@@ -370,7 +379,7 @@ body {
 }
 
 .info-section, .graphs-section {
-  width: 85%;
+  width: 90%;
   position: relative;
 }
 

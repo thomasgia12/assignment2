@@ -1,64 +1,58 @@
-// Vega-Lite specification
 var spec = {
-    "width": 550,  // Add this line, adjust value as needed
-    "height": 400, // Add this line, adjust value as needed
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 550,
+    "height": 400,
+    "background": "#E5E5E5", 
+    "projection": {"type": "equalEarth"},
     "layer": [
         {
             "data": {
                 "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
-                "format": { "type": "topojson", "feature": "oceans" }
+                "format": {"type": "topojson", "feature": "oceans"}
             },
-            "mark": { "type": "geoshape", "fill": "skyblue" }
+            "mark": {"type": "geoshape", "fill": "#2D2D2D"}
         },
         {
             "data": {
                 "url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/data/longdata1.csv",
-                "format": { "type": "csv" }
+                "format": {"type": "csv"}
             },
-            "transform": [
-                {
-                    "filter": "datum.AllYears == selectedYear"
-                }
-            ],
-            "mark": { "type": "circle", "color": "red" },
+            "transform": [],  // Placeholder for filter
+            "mark": {"type": "circle", "color": "red"},
             "encoding": {
-                "longitude": { "field": "lng", "type": "quantitative" },
-                "latitude": { "field": "lat", "type": "quantitative" },
+                "longitude": {"field": "lng", "type": "quantitative"},
+                "latitude": {"field": "lat", "type": "quantitative"},
                 "tooltip": [
-                    { "field": "name", "type": "nominal", "title": "Circuit Name" },
-                    { "field": "location", "type": "nominal", "title": "Location" },
-                    { "field": "country", "type": "nominal", "title": "Country" },
-                    { "field": "AllYears", "type": "quantitative", "title": "Year" }
+                    {"field": "name", "type": "nominal", "title": "Circuit Name"},
+                    {"field": "location", "type": "nominal", "title": "Location"},
+                    {"field": "country", "type": "nominal", "title": "Country"},
+                    {"field": "AllYears", "type": "quantitative", "title": "Year"}
                 ],
-                "size": { "value": 100 }
+                "size": {"value": 100}
             }
         }
     ],
     "data": {
         "url": "https://raw.githubusercontent.com/thomasgia12/assignment2/main/js/ne_110m.topojson",
-        "format": {
-            "type": "topojson",
-            "feature": "countries"
-        }
+        "format": {"type": "topojson", "feature": "countries"}
     }
 };
 
 // Function to load and render the chart
 function renderChart(selectedYear) {
-    spec.layer[1].transform[0].filter = `datum.AllYears == ${selectedYear}`;
+    spec.layer[1].transform = [{"filter": `datum.AllYears == ${selectedYear}`}];
 
     // Embed the Vega-Lite spec
-    vegaEmbed('#vis', spec).catch(error => {
+    vegaEmbed('#vis', spec, { actions: false }).catch(error => {
         console.error('Error embedding the visualization:', error);
     });
 }
 
 // Initial render for 1950
-renderChart('1950');
+renderChart(1950);
 
 // Update visualization when year selection changes
 document.getElementById('yearSelection').addEventListener('input', function () {
     document.getElementById('yearDisplay').textContent = this.value;
-    renderChart(this.value);  // Re-render the chart with selected year's data
+    renderChart(parseInt(this.value));  // Re-render the chart with selected year's data
 });
-

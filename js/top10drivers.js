@@ -35,13 +35,26 @@ const top10drivers = {
       {"field": "First", "type": "nominal", "title": "Driver"},
       {"field": "Last", "type": "nominal", "title": "Surname"},
       {"field": "Wins", "type": "quantitative", "title": "Total Wins"}
-    ]
+    ],
+    "color": {
+      "condition": [
+        {
+          "test": "datum.rank === 1",
+          "value": "blue"
+        },
+        {
+          "test": "datum.rank === 2",
+          "value": "red"
+        }
+      ],
+      "value": "darkgrey"
+    }
   },
   "config": {}
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-  vegaEmbed('#top10drivers', top10drivers);
+  vegaEmbed('#top10drivers', top10drivers, { actions: false });
 });
 
 // Use the chartData object in your application

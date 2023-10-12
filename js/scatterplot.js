@@ -27,7 +27,7 @@ const fastestLapTimesChart = {
       "y": {
         "field": "minutes",
         "type": "quantitative",
-        "axis": {"title": "Time to finish in Monza (in minutes)"}
+        "axis": {"title": "Time (minutes)"}
       },
       "tooltip": [
         {"field": "Year", "type": "quantitative", "title": "Year"},
@@ -50,7 +50,7 @@ const fastestLapTimesChart = {
   
   // Later in the code, you can use the variable 'fastestLapTimesChart' wherever required.
   window.onload = function() {
-    vegaEmbed('#scatterplot', fastestLapTimesChart).then(function(result) {
+    vegaEmbed('#scatterplot', fastestLapTimesChart, { actions: false }).then(function(result) {
       // Visualization successfully embedded
     }).catch(console.error); // Log any embedding errors to the console
   };

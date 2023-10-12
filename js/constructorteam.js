@@ -9,9 +9,9 @@ var constructorteam = {
                 "field": "ConstructorTeam",
                 "oneOf": [
                     "Alfa Romeo", "AlphaTauri", "Alpine F1 Team", "Aston Martin",
-                    "BMW Sauber", "Brabham", "Caterham", "Coloni", "Cooper", "Dallara",
+                    "BMW Sauber", "Brabham", "Caterham", "Cooper", "Dallara",
                     "Ensign", "Ferrari", "Force India", "Haas F1 Team", "Jaguar",
-                    "Honda", "Larrousse", "Leyton House", "Lotus", "McLaren",
+                    "Honda", "Larrousse", "Lotus", "McLaren",
                     "Mercedes", "Minardi", "Racing Point", "Red Bull", "Renault",
                     "Toro Rosso", "Toyota", "Williams"
                 ]
@@ -21,17 +21,11 @@ var constructorteam = {
             "filter": {
                 "field": "circuitname",
                 "oneOf": [
-                    "Albert Park Grand Prix",
                     "Autodromo Enzo e Dino Ferrari",
-                    "Autodromo Internazionale del Mugello",
                     "Autodromo Nazionale di Monza",
-                    "Autódromo Hermanos Rodríguez",
                     "Autódromo José Carlos Pace",
-                    "Autódromo Juan y Oscar Gálvez",
-                    "Autódromo do Estoril",
                     "Bahrain International Circuit",
                     "Baku City Circuit",
-                    "Buddh International Circuit",
                     "Circuit de Barcelona-Catalunya",
                     "Circuit de Monaco",
                     "Circuit de Nevers Magny-Cours",
@@ -88,7 +82,7 @@ var constructorteam = {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-    vegaEmbed('#constructorteam', constructorteam);
+    vegaEmbed('#constructorteam', constructorteam, {actions: false});
   });
   
   // Use the chartData object in your application
