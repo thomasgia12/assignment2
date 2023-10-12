@@ -9,8 +9,7 @@ var constructorteam = {
                 "field": "ConstructorTeam",
                 "oneOf": [
                     "Alfa Romeo", "AlphaTauri", "Alpine F1 Team", "Aston Martin",
-                    "BMW Sauber", "Brabham", "Caterham", "Cooper", "Dallara",
-                    "Ensign", "Ferrari", "Force India", "Haas F1 Team", "Jaguar",
+                    "Caterham", "Ferrari", "Force India", "Haas F1 Team", "Jaguar",
                     "Honda", "Larrousse", "Lotus", "McLaren",
                     "Mercedes", "Minardi", "Racing Point", "Red Bull", "Renault",
                     "Toro Rosso", "Toyota", "Williams"
@@ -74,10 +73,10 @@ var constructorteam = {
         "tooltip": [
             {"field": "ConstructorTeam", "type": "nominal", "title": "Constructor Team"},
             {"field": "circuitname", "type": "nominal", "title": "Circuit Name"},
-            {"field": "avgPosition", "type": "quantitative", "title": "Average Position", "format": ".2f"}
+            {"field": "avgPosition", "type": "quantitative", "title": "Average Position", "format": ".2f"},
         ]
     },
-    "title": "Average Race Performance by Constructor at Each Circuit (Selected Teams)",
+    "title": "Average Race Performance by Constructor at Specific Circuits",
     "config": {}
 };
 

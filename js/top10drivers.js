@@ -34,16 +34,37 @@ const top10drivers = {
     "tooltip": [
       {"field": "First", "type": "nominal", "title": "Driver"},
       {"field": "Last", "type": "nominal", "title": "Surname"},
-      {"field": "Wins", "type": "quantitative", "title": "Total Wins"}
+      {"field": "Wins", "type": "quantitative", "title": "Total Wins"},
+      {"field": "ConstructorTeam", "type": "nominal", "title": "Constructor Team"}
     ],
     "color": {
       "condition": [
         {
           "test": "datum.rank === 1",
-          "value": "blue"
+          "value": "lightblue"
         },
         {
           "test": "datum.rank === 2",
+          "value": "red"
+        },
+        {
+          "test": "datum.rank === 3",
+          "value": "blue"
+        },
+        {
+          "test": "datum.rank === 4",
+          "value": "orange"
+        },
+        {
+          "test": "datum.rank === 5",
+          "value": "blue"
+        },
+                {
+          "test": "datum.rank === 6",
+          "value": "orange"
+        },
+        {
+          "test": "datum.rank === 9",
           "value": "red"
         }
       ],

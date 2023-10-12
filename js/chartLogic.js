@@ -1,8 +1,8 @@
 var spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 550,
-    "height": 400,
-    "background": "#E5E5E5", 
+    "height": 270,
+    "background": "#fff", 
     "projection": {"type": "equalEarth"},
     "layer": [
         {

@@ -208,22 +208,43 @@ body {
 .about-container {
   text-align: center;
   background-color: #fff;
-  margin-top: 300px;
-  margin: 70px;
+  margin: 50px;
+  width: 750px;
+  height: 500px;
+  margin-top: 40%;
   align-items: center;
-  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  
 }
 
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;  /* Aligns items to the left */
+  margin-left: 200px;
+}
+
+#yearSelection {
+  width: 200px;  /* Adjust this value to set the desired width */
+  margin-left: 10px;  /* Optional: adds some space between the label and the slider */
+}
+
+#yearDisplay {
+  margin-left: 20px;  /* Optional: adds some space between the slider and the display span */
+}
+
+
 .about-container h2 {
+  text-align: left;
   font-size: 24px;
   letter-spacing: 0.5px;
   color: #121212;
   text-transform: uppercase;
-  margin: 45px 15px 0px 15px;
+  margin: 45px 100px 15px 15px;
   margin-bottom: 0px;
   font-weight: 900;
+  border-bottom: 1px solid #121212; /* Adjust color and thickness as desired */
+  padding-bottom: 5px;
 }
 
 .about-container h2 em {
@@ -238,9 +259,10 @@ body {
 }
 
 .about-container p {
+  text-align: left;
   font-size: 14px;
   color: #343434;
-  margin: 5px 15px 15px 15px;
+  margin: 10px 100px 15px 15px;
 }
 
 .about-container p em {
@@ -248,9 +270,15 @@ body {
   font-style: normal;
 }
 
-.about-container img {
-  width: 100%;
+#vis, #vis * {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  outline: none;
 }
+
+
+
 
 /*
 ========================================
@@ -265,14 +293,17 @@ body {
   align-items: center;
   flex-direction: column;
   width: 750px;
-  height: 450px;
+  height: 460px;
+  margin: 50px;
   margin-top: 40%;
 }
+
+
 
 .project-item {
   flex: 1; /* Each graph will take up equal width */
   text-align: center; /* Center the graph content if it doesn't span the full width */
-  padding: 0 10px; /* Optional: Add some padding for spacing between graphs */
+  height: 1000px;
 }
 
 
@@ -290,6 +321,8 @@ body {
   margin: 40px 15px 0px 15px;
   margin-bottom: 0px;
   font-weight: 900;
+  border-bottom: 1px solid #121212; /* Adjust color and thickness as desired */
+  padding-bottom: 5px;
 }
 
 .projects-container h2 em {
@@ -327,6 +360,18 @@ body {
   box-sizing: border-box;  /* This ensures the margin is included in the width */
 }
 
+.hamilton {
+    color: lightblue;
+}
+
+.schumacher {
+    color: red;
+}
+
+.monza {
+  color: black;
+  font-weight: bold;
+}
 
 
 
@@ -366,6 +411,8 @@ body {
   margin: 40px 15px;
   margin-bottom: 0px;
   font-weight: 900;
+  border-bottom: 1px solid #121212; /* Adjust color and thickness as desired */
+  padding-bottom: 5px;
 }
 
 .contact-container h2 em {
