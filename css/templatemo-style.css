@@ -277,7 +277,9 @@ body {
   outline: none;
 }
 
-
+p span {
+  color: red;
+}
 
 
 /*
@@ -351,7 +353,7 @@ body {
   width: 90%; /* make sure it takes up the full width */
   display: flex;
   justify-content: space-between;  
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .paragraphs-container p {
@@ -366,6 +368,10 @@ body {
 
 .schumacher {
     color: red;
+}
+
+div p span {
+  color: blue;
 }
 
 .monza {
