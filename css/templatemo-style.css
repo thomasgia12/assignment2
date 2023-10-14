@@ -240,7 +240,7 @@ body {
   letter-spacing: 0.5px;
   color: #121212;
   text-transform: uppercase;
-  margin: 45px 100px 15px 15px;
+  margin: 41px 100px 15px 50px;
   margin-bottom: 0px;
   font-weight: 900;
   border-bottom: 1px solid #121212; /* Adjust color and thickness as desired */
@@ -262,7 +262,7 @@ body {
   text-align: left;
   font-size: 14px;
   color: #343434;
-  margin: 10px 100px 15px 15px;
+  margin: 10px 50px 15px 50px;
 }
 
 .about-container p em {
@@ -386,15 +386,15 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  width: 900px;
-  height: 875px;
-  margin-top: 10%;
+  width: 750px;
+  height: 820px;
+  margin: 50px;
+  margin-top: 25%;
 }
 
 .contact-item {
   position: relative;
   text-align: center;
-  width: 100%;
 }
 
 .contact-container p {
@@ -427,6 +427,7 @@ body {
 
 .info-section, .graphs-section {
   width: 90%;
+  height: 100%;
   position: relative;
 }
 

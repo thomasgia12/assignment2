@@ -67,8 +67,8 @@ var constructorteam = {
             "field": "avgPosition",
             "type": "quantitative",
             "title": "Average Position",
-            "scale": {"domain": [1, 20], "scheme": "redyellowblue", "reverse": true},
-            "legend": {"title": "Average Position (Lower is Better)"}
+            "scale": {"domain": [1, 22], "scheme": "redyellowblue", "reverse": true},
+            "legend": {"title": "Average Position"}
         },
         "tooltip": [
             {"field": "ConstructorTeam", "type": "nominal", "title": "Constructor Team"},
