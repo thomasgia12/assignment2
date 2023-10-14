@@ -277,8 +277,8 @@ body {
   outline: none;
 }
 
-p span {
-  color: red;
+.locations {
+    color: red;
 }
 
 
@@ -320,7 +320,7 @@ p span {
   letter-spacing: 0.5px;
   color: #121212;
   text-transform: uppercase;
-  margin: 40px 15px 0px 15px;
+  margin: 20px 15px 0px 15px;
   margin-bottom: 0px;
   font-weight: 900;
   border-bottom: 1px solid #121212; /* Adjust color and thickness as desired */
@@ -370,8 +370,8 @@ p span {
     color: red;
 }
 
-div p span {
-  color: blue;
+.redbull {
+    color: blue;
 }
 
 .monza {
@@ -393,7 +393,7 @@ div p span {
   align-items: center;
   flex-direction: column;
   width: 750px;
-  height: 820px;
+  height: 818px;
   margin: 50px;
   margin-top: 25%;
 }
@@ -451,6 +451,17 @@ div p span {
   margin-right: 15px;
 }
 
+.hamilton {
+  color: lightblue;
+}
+
+.schumacher {
+  color: red;
+}
+
+.redbull {
+  color: blue;
+}
 
 
 /*
